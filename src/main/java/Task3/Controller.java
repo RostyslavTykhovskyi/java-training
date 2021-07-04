@@ -27,6 +27,14 @@ public class Controller {
         view.printMessage(notebook.getNote().toString());
     }
 
+    /**
+     * Created by Rostyslav Tykhovskyi on 04.07.2021
+     *
+     * @param scanner used to get user input
+     * @param message printed before user enters a value
+     * @param regex used to validate user input
+     * @return validated String
+     */
     private String inputStringValueWithScanner(Scanner scanner, String message, String regex) {
         view.printMessage(message);
         String string = scanner.next();
