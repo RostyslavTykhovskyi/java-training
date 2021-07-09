@@ -18,6 +18,7 @@ public class View {
     public void printEnterMessage(String message) {
         System.out.println(bundle.getString(ENTER_DATA) + " " + bundle.getString(message));
     }
+
     public void printWrongMessage(String message) {
         System.out.println(bundle.getString(WRONG_INPUT_DATA)
                 + "\n" + bundle.getString(ENTER_DATA)

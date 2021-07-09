@@ -2,12 +2,13 @@ package Task3.controller;
 
 import Task3.view.View;
 import Task3.view.TextConstants;
+import jdk.nashorn.internal.parser.JSONParser;
 
 import java.util.Scanner;
 
 import static Task3.controller.RegexContainer.*;
 
-public class InputNote {
+public class NewNote {
     private Scanner scanner;
     private View view;
 
@@ -16,7 +17,7 @@ public class InputNote {
     private String surname;
     private String login;
 
-    public InputNote(Scanner scanner, View view) {
+    public NewNote(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
@@ -42,5 +43,32 @@ public class InputNote {
         this.login =
                 utilityController.inputStringValueWithScanner
                         (TextConstants.ENTER_LOGIN_DATA, REGEX_LOGIN);
+    }
+
+    public void inputLogin() {
+        UtilityController utilityController = new UtilityController(scanner, view);
+
+        String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
+                ? REGEX_NAME_UKR : REGEX_NAME_LAT;
+
+        this.login =
+                utilityController.inputStringValueWithScanner
+                        (TextConstants.ENTER_LOGIN_DATA, REGEX_LOGIN);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getLogin() {
+        return login;
     }
 }
